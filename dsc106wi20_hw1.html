@@ -9,8 +9,8 @@
     </head>
     <body>
         <main>
-        <img id = "logo" src="/images/dw-logo.png">
-        <h1 id = "title" class = "title">Global Dashboard</header>
+        <img id = "logo" alt = "None" src="/images/dw-logo.png">
+        <h1 id = "title" class = "title">Global Dashboard</h1>
         <section id = "total_stats_title">
             <div  class = "column">
                 <h3 id = "total_stats_dingus" class ='total_title' >Dingus</h3>
@@ -38,18 +38,20 @@
             <div class = "column">
                 <figure>
                     <figcaption>Total Sales Breakdown</figcaption>
-                    <img id = "pie" class = "charts" src = "/images/pie.png">
+                    <img id = "pie" alt = "None" class = "charts" src = "/images/pie.png">
                 </figure>
             </div>
             <div class = "column">
                 <figure>
                     <figcaption>Sales Per Day</figcaption>
-                    <img id = "bar" class = "charts" src = "/images/bar.png">
+                    <img id = "bar" alt = "None" class = "charts" src = "/images/bar.png">
                 </figure>
             </div>
-            <div class = "column"><iframe  id = "line" class = "charts" src = "https://app.zingsoft.com/demos/view/DK4RG3XN" frameborder="0" width = 700 height = 600></iframe></div>
+            <div class = "column">
+                <iframe  id = "line" class = "charts" src = "https://app.zingsoft.com/demos/view/DK4RG3XN" width = 700 height = 600></iframe>
+            </div>
         </section>
-        <section id = "charts">
+        <section>
             <div class = "column"><p> </p> </div>
             <div class = "column"><p> </p> </div>
             <div class = "column" style = "text-align: center;">
@@ -73,7 +75,6 @@
                 <th rowspan="2">Total</th>
             </tr>
             <tr>
-
                 <th>Dingus</th>
                 <th>Widget</th>
             </tr>
@@ -101,7 +102,9 @@
                 </tr>
             </tbody>
             <tfoot>
-                <td colspan="5">&#169; 2020 D&W Worldwide.</td>
+                <tr>
+                    <td colspan="5">&#169; 2020 D&W Worldwide.</td>
+                </tr>
             </tfoot>
             </table>
         <br>
@@ -113,33 +116,32 @@
             <fieldset>
                 <form>
                     <section id = "dingus_form">
-                        <label for = "dingus_number">Dingus</label>
+                        <label for = "dingusNo">Dingus</label>
                         <input type = "number" name = "dingus_number" value = "0" id = "dingusNo" min = "0">
                         <label for = "dingus_price">@</label>
-                        <input type = "number" value = "14.25" min = "0">
-                        <label for = "dingus_total">=$</label>
-                        <input type = "number" value = "0.00" min = "0">
+                        <input type = "number" value = "14.25" min = "0" id = "dingus_price">
+                        <label for = "dingus_total_cost">=$</label>
+                        <input type = "number" value = "0.00" min = "0" id = "dingus_total_cost">
                     </section>
                     <br>
                     <section id = "widget_form">
-                        <label for = "widget_number">Widget</label>
+                        <label for = "widgetNo" >Widget</label>
                         <input type = "number" name = "widget_number" value = "0" id = "widgetNo" min = "0">
                         <label for = "widget_price">@</label>
-                        <input type = "number" value = "14.25" min = "0">
-                        <label for = "widget_total">=$</label>
-                        <input type = "number" value = "0.00" min = "0">
+                        <input type = "number" value = "14.25" min = "0" id = "widget_price">
+                        <label for = "widget_total_cost">=$</label>
+                        <input type = "number" value = "0.00" min = "0" id = "widget_total_cost">
                     </section>
                     <br>
                     <section id = "total_form">
-                        <label for = total_money>Total $</label>
-                        <input type = "number" value = "0.00" min = "0">
+                        <label for = "total_money">Total $</label>
+                        <input type = "number" value = "0.00" min = "0" id = "total_money">
                     </section>
                     <br>
                     <section id = "shipping_info">
-
                         <label for="shipping">Shipping</label>
-                        <input list = "shipping">
-                        <datalist id = "shipping">
+                        <input list = "shipping_options" id = "shipping">
+                        <datalist id = "shipping_options">
                             <option value = ups></option>
                             <option value = usps></option>
                         </datalist>
@@ -148,16 +150,16 @@
                     <section id = "payment_info">
                         <label for = "payment" >Payment</label>
                         <br>
-                        <select multiple> 
+                        <select multiple id = "payment"> 
                             <option value="Visa">Visa</option>
                             <option value="MasterCard">MasterCard</option>
                             <option value="Paypal">Paypal</option>
                         </select>
                     </section>
                     <br>
-                    <section id = "comment">
+                    <section id = "comment_section">
                         <label for = "comment">Comment</label>
-                        <textarea></textarea>
+                        <textarea id = "comment"></textarea>
                     </section>
                     <br>
                     <section id = "buttons">
@@ -169,7 +171,7 @@
 
         </details>
     </main>
-    </body>
+    
     <br>
     <footer>
         <section id = "Disclaimer">
@@ -185,5 +187,5 @@
 
         <address id = "address">9500 Gilamn Dr. La Jolla, CA 92093</address>
     </footer>
-    
+    </body>
 </html>
