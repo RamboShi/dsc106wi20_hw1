@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="hw1style.css" />
+        <title>Dingus and Widget Global Dashboard</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat%7CPaytone+One&display=swap" rel="stylesheet" />
+        <script type="text/javascript" src="/scripts/hw1.js"></script>
+    </head>
+    <body>
+        <main>
+        <img id = "logo" src="/images/dw-logo.png">
+        <h1 id = "title" class = "title">Global Dashboard</header>
+        <section id = "total_stats_title">
+            <div  class = "column">
+                <h3 id = "total_stats_dingus" class ='total_title' >Dingus</h3>
+            </div>
+            <div  class = "column">
+                <h3 id = "total_stats_widget" class ='total_title'>Widget</h3>
+            </div>
+            <div class = "column">     
+                <h3 id = "total_stats_Sales" class ='total_title'>Sales</h3>
+            </div>
+        </section>
+        <section id = "total_stats_stats">
+            <div  class = "column">
+                <p id = "dingus_number" class = "total_stats">0</p>
+            </div>
+            <div  class = "column">
+                <p id = "widget_number" class = "total_stats">0</p>
+            </div>
+            <div class = "column">  
+                <p id = "sale_number" class = "total_stats"><span id='moneySign'>$</span>0.00</p>
+            </div>
+        </section>
+        <hr>
+        <section id = "charts">
+            <div class = "column">
+                <figure>
+                    <figcaption>Total Sales Breakdown</figcaption>
+                    <img id = "pie" class = "charts" src = "/images/pie.png">
+                </figure>
+            </div>
+            <div class = "column">
+                <figure>
+                    <figcaption>Sales Per Day</figcaption>
+                    <img id = "bar" class = "charts" src = "/images/bar.png">
+                </figure>
+            </div>
+            <div class = "column"><iframe  id = "line" class = "charts" src = "https://app.zingsoft.com/demos/view/DK4RG3XN" frameborder="0" width = 700 height = 600></iframe></div>
+        </section>
+        <section id = "charts">
+            <div class = "column"><p> </p> </div>
+            <div class = "column"><p> </p> </div>
+            <div class = "column" style = "text-align: center;">
+                <a href="https://app.zingsoft.com/demos/view/DK4RG3XN">Source</a>
+            </div>
+        </section>
+        <br>
+        <hr>
+        <h2 id = "order_history1"></h2>
+
+        <table>
+            <caption>Order History</caption>
+            <colgroup>
+                <col  id = "idcol" style="background-color: lightgrey;">
+                <col span = "4">
+            </colgroup>
+            <tr>
+                <th rowspan="2">ID#</th>
+                <th rowspan="2">Date</th>
+                <th colspan = "2">Quantity</th>
+                <th rowspan="2">Total</th>
+            </tr>
+            <tr>
+
+                <th>Dingus</th>
+                <th>Widget</th>
+            </tr>
+            <tbody>
+                <tr>
+                    <td>1221</td>
+                    <td>12/12/19</td>
+                    <td>4</td>
+                    <td>10</td>
+                    <td>$12.33</td>
+                </tr>
+                <tr>
+                    <td>1222</td>
+                    <td>12/21/19</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>$27.34</td>
+                </tr>
+                <tr>
+                    <td>1223</td>
+                    <td>1/5/20</td>
+                    <td>14</td>
+                    <td>19</td>
+                    <td>$345.33</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <td colspan="5">&#169; 2020 D&W Worldwide.</td>
+            </tfoot>
+            </table>
+        <br>
+        <details onclick="showDialog()">
+            <summary>Order Form</summary>
+            <dialog id = "dialog" open>This section will work only after HW2</dialog>
+            
+            <hr>
+            <fieldset>
+                <form>
+                    <section id = "dingus_form">
+                        <label for = "dingus_number">Dingus</label>
+                        <input type = "number" name = "dingus_number" value = "0" id = "dingusNo" min = "0">
+                        <label for = "dingus_price">@</label>
+                        <input type = "number" value = "14.25" min = "0">
+                        <label for = "dingus_total">=$</label>
+                        <input type = "number" value = "0.00" min = "0">
+                    </section>
+                    <br>
+                    <section id = "widget_form">
+                        <label for = "widget_number">Widget</label>
+                        <input type = "number" name = "widget_number" value = "0" id = "widgetNo" min = "0">
+                        <label for = "widget_price">@</label>
+                        <input type = "number" value = "14.25" min = "0">
+                        <label for = "widget_total">=$</label>
+                        <input type = "number" value = "0.00" min = "0">
+                    </section>
+                    <br>
+                    <section id = "total_form">
+                        <label for = total_money>Total $</label>
+                        <input type = "number" value = "0.00" min = "0">
+                    </section>
+                    <br>
+                    <section id = "shipping_info">
+
+                        <label for="shipping">Shipping</label>
+                        <input list = "shipping">
+                        <datalist id = "shipping">
+                            <option value = ups></option>
+                            <option value = usps></option>
+                        </datalist>
+                    </section>
+                    <br>
+                    <section id = "payment_info">
+                        <label for = "payment" >Payment</label>
+                        <br>
+                        <select multiple> 
+                            <option value="Visa">Visa</option>
+                            <option value="MasterCard">MasterCard</option>
+                            <option value="Paypal">Paypal</option>
+                        </select>
+                    </section>
+                    <br>
+                    <section id = "comment">
+                        <label for = "comment">Comment</label>
+                        <textarea></textarea>
+                    </section>
+                    <br>
+                    <section id = "buttons">
+                        <input type = "button" value="Cancel">
+                        <input type = "submit" value="Order">
+                    </section>
+                </form>
+            </fieldset>
+
+        </details>
+    </main>
+    </body>
+    <br>
+    <footer>
+        <section id = "Disclaimer">
+            <p>Disclaimer: This page is provided <span><i> as is</i></span></p>
+            
+        </section>
+        <p id = "notes_head">Notes</p>
+        <ul>
+          <li>Your order will leave warehouse in 3-5days</li>
+          <li>If you have any question please contact us at 123456789</li>
+          <li>DSW is a proud supporter of the <i>Stuart Collection</i></li>
+        </ul>
+
+        <address id = "address">9500 Gilamn Dr. La Jolla, CA 92093</address>
+    </footer>
+    
+</html>
